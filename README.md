@@ -58,7 +58,7 @@ This section describes prediction of protein binding prediction of drugs to path
     - GeneName \t Pathway \t score type (L2) \t empirical p-value
     
 ## Running
-### Training
+### Calculating scores and significance
 ```shell
     python main.py -w
 
