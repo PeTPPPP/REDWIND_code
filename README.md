@@ -1,10 +1,10 @@
 # General
 
 1. Clone repo
-2. Unzip '.7z' files in wdir and resource/Genes2Drug/9657Genes2Drugs
+2. Unzip '.7z' files in wdir and ./resource/Genes2Drug/9657Genes2Drugs
 
 # Gene2Drug
-This section describes prediction of protein binding prediction of drugs using differentially expressed genes in the transcriptomic experiment
+This section describes prediction of protein binding prediction of drugs using differentially expressed genes in the transcriptomic experiment in migraineurs
 
 ## Input-Output
 - Input: A list of gens at ./data/gene_list.txt
@@ -41,8 +41,8 @@ This section describes prediction of protein binding prediction of drugs using d
 
 # Pathway2Drug
 
-This section describes prediction of protein binding prediction of drugs to pathways using differentially expressed genes of transcriptomic experiment
-
+This section describes prediction of protein binding prediction of drugs to pathways using differentially expressed genes of the transcriptomic experiment in migraineurs
+1. Copy result files of Gene2Drug into ./resource/Genes2Drug/9657Genes2Drugs/. NOTE: Consider overwriting existing files
 ## Input-Output
 - Input: A Genes2Drugs.txt containing gene-drug predicted binding scores
   - Format: Potentially associated drugs with each gen at ./wdir/Gene2Drugs.txt
