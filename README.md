@@ -2,6 +2,10 @@
 
 1. Clone repo
 2. Unzip '.7z' files in wdir and ./resource/Genes2Drug/9657Genes2Drugs
+3. Create environmen with 
+```shell
+    conda env create --name REDWIND --file=env.yml
+```
 
 # Gene2Drug
 This section describes prediction of protein binding prediction of drugs using differentially expressed genes in the transcriptomic experiment in migraineurs
