@@ -47,15 +47,15 @@ This section describes prediction of protein binding prediction of drugs to path
 - Input: A Genes2Drugs.txt containing gene-drug predicted binding scores
   - Format: Potentially associated drugs with each gen at ./wdir/Gene2Drugs.txt
 - Input2: ALL_pathway_gene_list_total.txt containing pathway-gene associations
-  - Format: One pathway per line PathwayName&nbsp;gene1&nbsp;gene2 ...
+  - Format: One pathway per line PathwayName&nbsp;   gene1&nbsp;   gene2 ...
 - Input3: DEG_results_S1_all_SAAS.csv and DEG_results_S2_all_SAAS.csv containing expression values for all genes as output from edgeR analysis at the two time points
-  - Format: ID&nbsp;logFC&nbsp;logCPM&nbsp;F&nbsp;PValue&nbsp;names&nbsp;symbol&nbsp;entrezid&nbsp;FDR
+  - Format: ID&nbsp;   logFC&nbsp;   logCPM&nbsp;   F&nbsp;   PValue&nbsp;   names&nbsp;   symbol&nbsp;   entrezid&nbsp;   FDR
 - Input4: Top10Stats.txt containing the number of bindings in the top genes of drugs (for filtering)
-  - Format: Drug name&nbsp;Number of top10 occurences
+  - Format: Drug name&nbsp;   Number of top10 occurences
 
 - Output: significant_results_0.0005.txt containing significant L2 scores for given drug and pathway combinations
   - Format: Each line contains predicted associated scores of drug with a pathway: 
-    - DrugName&nbsp;Pathway&nbsp;score type (L2)&nbsp;empirical p-value
+    - DrugName&nbsp;   Pathway&nbsp;   score type (L2)&nbsp;   empirical p-value
     
 ## Running
 ### Calculating scores and significance
