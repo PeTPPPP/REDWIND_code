@@ -5,6 +5,7 @@
 3. Create environmen with 
 ```shell
     conda env create --name REDWIND --file=env.yml
+    conda activate REDWIND
 ```
 
 # Gene2Drug
