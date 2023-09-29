@@ -1,12 +1,16 @@
 # General
 
 0. Install git Large File Storage by following the steps in https://git-lfs.com/
-1. Clone repo with 
+1. initialize git lfs with 
+```shell
+    git lfs install
+```
+2. Clone repo with 
 ```shell
     git lfs clone https://github.com/PeTPPPP/REDWIND_code
 ```
     
-2. Create environment with 
+3. Create environment with 
 ```shell
     conda env create --name REDWIND --file=env.yml
     conda activate REDWIND
