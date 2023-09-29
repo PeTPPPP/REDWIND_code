@@ -1,7 +1,7 @@
 # General
 
 0. Install git Large File Storage by following the steps in https://git-lfs.com/
-1. initialize git lfs with 
+1. Initialize git lfs with 
 ```shell
     git lfs install
 ```
