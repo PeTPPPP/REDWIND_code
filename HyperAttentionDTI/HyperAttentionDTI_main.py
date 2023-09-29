@@ -60,9 +60,9 @@ def test_precess(model, pbar, LOSS):
         for i, data in pbar:
             '''data preparation '''
             compounds, proteins, labels = data
-            compounds = compounds.cuda()
-            proteins = proteins.cuda()
-            labels = labels.cuda()
+            compounds = compounds.to(device)
+            proteins = proteins.to(device)
+            labels = labels.to(device)
 
             predicted_scores = model(compounds, proteins)
             loss = LOSS(predicted_scores, labels)
@@ -157,14 +157,14 @@ def run():
             train_data_list = f.read().strip().split('\n')
         print("load finished")
     elif DATASET == "Davis":
-        weight_CE = torch.from_numpy(np.asarray([0.3, 0.7])).float().to(device)  # .cuda()
+        weight_CE = torch.from_numpy(np.asarray([0.3, 0.7])).float().to(device)  # .to(device)
         dir_input = ('{}/data/{}.txt'.format(C_DIR, DATASET))
         print("load data")
         with open(dir_input, "r") as f:
             train_data_list = f.read().strip().split('\n')
         print("load finished")
     elif DATASET == "KIBA":
-        weight_CE = torch.from_numpy(np.asarray([0.2, 0.8])).float().to(device)  # .cuda()
+        weight_CE = torch.from_numpy(np.asarray([0.2, 0.8])).float().to(device)  # .to(device)
         dir_input = ('{}/data/{}.txt'.format(C_DIR, DATASET))
         print("load data")
         with open(dir_input, "r") as f:
@@ -198,7 +198,7 @@ def run():
                                        collate_fn=collate_fn)
 
         """ create model"""
-        model = AttentionDTI(hp).cuda()
+        model = AttentionDTI(hp).to(device)
         """weight initialize"""
         weight_p, bias_p = [], []
         for p in model.parameters():
@@ -254,9 +254,9 @@ def run():
             for trian_i, train_data in trian_pbar:
                 '''data preparation '''
                 trian_compounds, trian_proteins, trian_labels = train_data
-                trian_compounds = trian_compounds.cuda()
-                trian_proteins = trian_proteins.cuda()
-                trian_labels = trian_labels.cuda()
+                trian_compounds = trian_compounds.to(device)
+                trian_proteins = trian_proteins.to(device)
+                trian_labels = trian_labels.to(device)
 
                 optimizer.zero_grad()
 
@@ -285,9 +285,9 @@ def run():
                     '''data preparation '''
                     valid_compounds, valid_proteins, valid_labels = valid_data
 
-                    valid_compounds = valid_compounds.cuda()
-                    valid_proteins = valid_proteins.cuda()
-                    valid_labels = valid_labels.cuda()
+                    valid_compounds = valid_compounds.to(device)
+                    valid_proteins = valid_proteins.to(device)
+                    valid_labels = valid_labels.to(device)
 
                     valid_scores = model(valid_compounds, valid_proteins)
                     valid_loss = Loss(valid_scores, valid_labels)
