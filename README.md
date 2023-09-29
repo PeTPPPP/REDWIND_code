@@ -1,9 +1,12 @@
 # General
 
-1. Clone repo
-2. Download '.7z' files manually from repo into the appropriate folders (wdir and ./resource/Genes2Drug/9657Genes2Drugs)
-3. Unzip '.7z' files in ./wdir and ./resource/Genes2Drug/9657Genes2Drugs
-4. Create environment with 
+0. Install git Large File Storage by following the steps in https://git-lfs.com/
+1. Clone repo with 
+```shell
+    git lfs clone https://github.com/PeTPPPP/REDWIND_code
+```
+    
+2. Create environment with 
 ```shell
     conda env create --name REDWIND --file=env.yml
     conda activate REDWIND
