@@ -1,9 +1,9 @@
 # General
 
 1. Clone repo
-2. Download '.7z' files manually from Github into the appropriate folders wdir and ./resource/Genes2Drug/9657Genes2Drugs
-2. Unzip '.7z' files in ./wdir and ./resource/Genes2Drug/9657Genes2Drugs
-3. Create environmen with 
+2. Download '.7z' files manually from repo into the appropriate folders (wdir and ./resource/Genes2Drug/9657Genes2Drugs)
+3. Unzip '.7z' files in ./wdir and ./resource/Genes2Drug/9657Genes2Drugs
+4. Create environmen with 
 ```shell
     conda env create --name REDWIND --file=env.yml
     conda activate REDWIND
