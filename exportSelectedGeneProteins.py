@@ -160,7 +160,7 @@ def export_gene_drug_full():
 
 def export_gene_drug_sub():
     import joblib
-    dProtein2Drug = joblib.load("./HpyerAttentionDTI/tmp/protein2Drugs_0%s.npy" % params.GEN_SUFFIX)
+    dProtein2Drug = joblib.load("./HyperAttentionDTI/tmp/protein2Drugs_0%s.npy" % params.GEN_SUFFIX)
     print("Num d protein 2 drug: ", len(dProtein2Drug))
     ddrug2id = loaddrugname2id()
     fin = open("%s/SelectedGene2Protein%s.txt" % (params.W_DIR, params.GEN_SUFFIX))
