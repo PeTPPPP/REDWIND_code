@@ -135,7 +135,7 @@ def collate_fn(batch_data):
         proteinint = torch.from_numpy(label_sequence(proteinstr, CHARPROTSET, protein_max))
         protein_new[i] = proteinint
         label = float(label)
-        labels_new[i] = np.int(label)
+        labels_new[i] = int(label)
     # return (drug_ids,protein_ids, compound_new, protein_new, labels_new)
     return (compound_new, protein_new, labels_new)
 

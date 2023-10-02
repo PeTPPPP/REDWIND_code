@@ -48,6 +48,7 @@ This section describes prediction of protein binding prediction of drugs using d
 ```
 ### Exporting predicted gene-drug scores
 ```shell
+    python main.py -m
     python main.py -x
 
 ```

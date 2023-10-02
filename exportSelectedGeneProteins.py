@@ -95,12 +95,11 @@ def export_gene_drug():
 def export_gene_drug_full():
     import joblib
     print("Loading full scores...")
-    drugNames, proteinNames, scores = joblib.load("./HpyerAttentionDTI/tmp/protein2DrugsXF_0%s.npy" % params.GEN_SUFFIX)
+    drugNames, proteinNames, scores = joblib.load("./HyperAttentionDTI/tmp/protein2DrugsXF_0%s.npy" % params.GEN_SUFFIX)
     print("Score shape: ", scores.shape)
     dProtein2Id = dict()
     for i, name in enumerate(proteinNames):
         dProtein2Id[name] = i
-
     def getScores(proteinName):
         proteinid = utils.get_dict(dProtein2Id, proteinName, -1)
         if proteinid != -1:
@@ -161,7 +160,7 @@ def export_gene_drug_full():
 
 def export_gene_drug_sub():
     import joblib
-    dProtein2Drug = joblib.load("./HpyerAttentionDTI/tmp/protein2Drugs_0%s.npy" % params.GEN_SUFFIX)
+    dProtein2Drug = joblib.load("./HyperAttentionDTI/tmp/protein2Drugs_0%s.npy" % params.GEN_SUFFIX)
     print("Num d protein 2 drug: ", len(dProtein2Drug))
     ddrug2id = loaddrugname2id()
     fin = open("%s/SelectedGene2Protein%s.txt" % (params.W_DIR, params.GEN_SUFFIX))

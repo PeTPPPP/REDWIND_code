@@ -36,8 +36,8 @@ def loadModel():
     """Load preprocessed data."""
 
     device = torch.device(params.DEVICE)
-
-    model = AttentionDTI(hp).cuda(device=device)
+    print("Device: ", device, params.DEVICE)
+    model = AttentionDTI(hp).to(device=device)
     model.load_state_dict(torch.load(MODEL_PATH))
     return model, hp
     # test_dataset = CustomDataSet(test_dataset)
@@ -59,8 +59,8 @@ def predict(model, pbar):
         for i, data in pbar:
             '''data preparation '''
             compounds, proteins = data
-            compounds = compounds.cuda(params.DEVICE)
-            proteins = proteins.cuda(params.DEVICE)
+            compounds = compounds.to(params.DEVICE)
+            proteins = proteins.to(params.DEVICE)
 
             predicted_scores = model(compounds, proteins)
             predicted_scores = F.softmax(predicted_scores, 1).to('cpu').data.numpy()
